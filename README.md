@@ -38,8 +38,8 @@ Trabajo practico final, inmplementar carrito de compras, para el curso de Talent
 
 ## 📖 Descripción:
 Este proyecto es una página web básica desarrollada como parte de un curso de Front-End. 
-La página está estructurada con HTML semántico y utiliza las etiquetas <header>, <body>, <main>, 
-y <footer> para organizar el contenido. El objetivo es aprender a crear la estructura básica de una página web,
+La página está estructurada con HTML semántico y utiliza las etiquetas < header >, < body >, < main >, 
+y < footer > para organizar el contenido. El objetivo es aprender a crear la estructura básica de una página web,
 y prepararla para futuras mejoras con CSS y JavaScript.
 En la continuación del Proyecto se incluyó un modulo de carrito de compras con productos afines al sitio web creado,
 control de stock, precio y funcionalidad de agregar y borrar items, finalizar la compra (simulado) o vaciado de carrito.
