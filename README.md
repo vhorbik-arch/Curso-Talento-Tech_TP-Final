@@ -27,10 +27,10 @@ Trabajo practico final, inmplementar carrito de compras, para el curso de Talent
 │   └── carrito-changuito.js
     
 ## 🛠️ Tecnologías Utilizadas:
-*   [Lenguaje/Framework] - HTML, CSS, JavaScript
-*   [Herramienta] - Visual Studio Code, Notepad++, Phoenix Code.
-*	  [Herramienta] - Conexión con GitHub, Formspree, Font Awesome
-*	  [Herramienta] - Sweet Alert, Fake Store Api
+*   [Lenguaje/Framework ] - HTML, CSS, JavaScript
+*   [Herramienta ] - Visual Studio Code, Notepad++, Phoenix Code.
+*	[Herramienta ] - Conexión con GitHub, Formspree, Font Awesome
+*	[Herramienta ] - Sweet Alert, Fake Store Api
 
 ### 🔧 Instalación y Uso:
 *   Visual Studio Code y Extensiones o Aplicaciones.
