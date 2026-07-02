@@ -1,6 +1,6 @@
 /* =====================================================
-            CARRITO DE COMPRAS - "CHANGUITO"
-    ===================================================== */
+           CARRITO DE COMPRAS - "CHANGUITO"
+   ===================================================== */
 
 // Inventario de productos de Valya PyroArt (los reales)
 let productos = [
@@ -22,8 +22,8 @@ let changuito = [];
 const CLAVE_CARRITO = "changuito";
 
 /* =====================================================
-    FUNCIÓN 1: GUARDAR CARRITO EN MEMORIA DEL NAVEGADOR
-    ===================================================== */
+   FUNCIÓN 1: GUARDAR CARRITO EN MEMORIA DEL NAVEGADOR
+   ===================================================== */
 function guardarChanguito() {
     // localStorage solo guarda TEXTO, no objetos
     // JSON.stringify() convierte el array a texto
@@ -32,8 +32,8 @@ function guardarChanguito() {
 }
 
 /* =====================================================
-    FUNCIÓN 2: CARGAR CARRITO QUE ESTABA GUARDADO
-    ===================================================== */
+   FUNCIÓN 2: CARGAR CARRITO QUE ESTABA GUARDADO
+   ===================================================== */
 function cargarChanguito() {
     // Busca si hay algo guardado con esa clave
     let guardado = localStorage.getItem(CLAVE_CARRITO);
@@ -46,8 +46,8 @@ function cargarChanguito() {
 }
 
 /* =====================================================
-    FUNCIÓN 3: AGREGAR UN PRODUCTO AL CARRITO
-    ===================================================== */
+   FUNCIÓN 3: AGREGAR UN PRODUCTO AL CARRITO
+   ===================================================== */
 function agregarAlChanguito(producto) {
     // 1. Buscamos si el item ya existe en el changuito
     let encontrado = changuito.find(item => item.item_id === producto.item_id);
@@ -122,8 +122,8 @@ botonesAgregar.forEach(boton => {
 
 
 /* =====================================================
-    FUNCIÓN 4: CALCULAR EL TOTAL DEL CARRITO
-    ===================================================== */
+   FUNCIÓN 4: CALCULAR EL TOTAL DEL CARRITO
+   ===================================================== */
 function calcularTotal() {
     let total = 0;
 
@@ -138,8 +138,8 @@ function calcularTotal() {
 }
 
 /* =====================================================
-    FUNCIÓN 5: MOSTRAR CARRITO EN LA CONSOLA 
-    ===================================================== */
+   FUNCIÓN 5: MOSTRAR CARRITO EN LA CONSOLA 
+   ===================================================== */
 function mostrarChanguito() {
     console.log("=== PRODUCTOS EN EL CHANGUITO ===");
     
@@ -157,8 +157,8 @@ function mostrarChanguito() {
 
 
 /* =====================================================
-    FUNCIÓN 6: DIBUJAR PRODUCTOS EN LA PÁGINA
-    ===================================================== */
+   FUNCIÓN 6: DIBUJAR PRODUCTOS EN LA PÁGINA
+   ===================================================== */
 function mostrarProductos() {
     // Busca el elemento UL donde irán los productos
     let lista = document.getElementById("lista-productos");
@@ -196,8 +196,8 @@ function mostrarProductos() {
 }
 
 /* =====================================================
-    FUNCIÓN 7: QUITAR UN PRODUCTO DEL CARRITO
-    ===================================================== */
+   FUNCIÓN 7: QUITAR UN PRODUCTO DEL CARRITO
+   ===================================================== */
 function quitarDelChanguito(indice) {
     let producto = changuito[indice];
     
@@ -216,8 +216,8 @@ function quitarDelChanguito(indice) {
 }
 
 /* =====================================================
-    FUNCIÓN 8: VACIAR EL CARRITO COMPLETO
-    ===================================================== */
+   FUNCIÓN 8: VACIAR EL CARRITO COMPLETO
+   ===================================================== */
 function vaciarChanguito() {
     // Deja el array totalmente vacío
     changuito = [];
@@ -228,8 +228,8 @@ function vaciarChanguito() {
 }
 
 /* =====================================================
-    FUNCIÓN 9: GENERAR EL TICKET DE COMPRA
-    ===================================================== */
+   FUNCIÓN 9: GENERAR EL TICKET DE COMPRA
+   ===================================================== */
 function generarTicket() {
     // Obtiene la fecha y hora actual
     let ahora = new Date();
@@ -344,8 +344,8 @@ function actualizarChanguito() {
     
 
 /* =====================================================
-    FUNCIÓN 10: FINALIZAR COMPRA (SIMULADO)
-    ===================================================== */
+   FUNCIÓN 10: FINALIZAR COMPRA (SIMULADO)
+   ===================================================== */
 function finalizarCompra() {
     if (changuito.length === 0) {
         alert("Tu changuito está vacío. Agregá productos antes de pagar.");
@@ -373,8 +373,8 @@ function finalizarCompra() {
 }
 
 /* =====================================================
-    FUNCIÓN 11: CUANDO CARGA LA PÁGINA (ARRANQUE)
-    ===================================================== */
+   FUNCIÓN 11: CUANDO CARGA LA PÁGINA (ARRANQUE)
+   ===================================================== */
 document.addEventListener("DOMContentLoaded", function () {
     console.log("=== PÁGINA CARGADA ===");
     
