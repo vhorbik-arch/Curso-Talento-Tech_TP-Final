@@ -1,0 +1,681 @@
+/* =====================================================
+   ESTILOS GLOBALES Y RESET
+   ===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* box-sizing: border-box hace que el padding no agrande
+     el elemento: queda todo adentro del tamaño definido */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #666;                /* color gris para todo el texto */
+  scroll-behavior: smooth;    /* hace que los links del menú bajen suavemente */
+  background: #f7d7fe;        /* fondo lila clarito de toda la página */
+}
+
+
+/* =====================================================
+   TIPOGRAFÍA: FUENTES
+   ===================================================== */
+
+/* Clase para títulos con la fuente decorativa importada de Google */
+.title-candy {
+  font-family: "Emilys Candy", serif;
+  font-weight: 600;
+  font-size: 2rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+p {
+  text-align: justify;  /* el texto queda alineado de los dos lados, como en un libro */
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+
+/* =====================================================
+   HEADER y NAV
+   ===================================================== */
+
+.header {
+  /* IMPORTANTE: cuando querés degradado + imagen de fondo juntos,
+     tienen que ir en una sola propiedad "background-image", separados por coma.
+     La primera capa va ARRIBA (el degradado), la segunda va ABAJO (la foto).
+     Si escribís "background" y "background-image" por separado,
+     la segunda línea pisa a la primera y perdés una de las dos. */
+  background-image:
+    linear-gradient(135deg, rgba(191, 155, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 100%),
+    url("../img/pyrografia.png");
+  /* El rgba() es igual que un color normal pero con un 4to valor: la opacidad.
+     0 = transparente, 1 = sólido. Con 0.6 el degradado deja ver la imagen de fondo. */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  min-height: 200px;
+  display: flex;
+  align-items: center;      /* centra verticalmente el contenido */
+  justify-content: space-between; /* logo a la izquierda, menú a la derecha */
+  padding: 0 2rem;
+}
+
+/* Logo circular en el header */
+.header-logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;         /* círculo perfecto */
+  object-fit: cover;          /* recorta la imagen para llenar el círculo sin deformarla */
+  border: 3px solid white;    /* borde blanco para que se vea bien sobre la imagen de fondo */
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;  /* empuja el menú hacia la derecha */
+}
+
+.nav-menu {
+  font-size: 1rem;
+  list-style: none;
+  display: flex;      /* pone los items en fila horizontal */
+  gap: 25px;          /* espacio entre cada item */
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  /* Fondo semitransparente para que el menú se lea bien sobre la imagen */
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.nav-menu li {
+  list-style: none;
+}
+
+.nav-menu a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+  padding: 5px 10px;
+  border-radius: 5px;
+  transform: translateX(5px); /* mueve el link 5px hacia la derecha al pasar el mouse */
+}
+
+
+/* =====================================================
+   MAIN y HERO (INICIO)
+   ===================================================== */
+
+main {
+  min-height: calc(100vh - 200px);
+  /* calc() hace una cuenta: la altura mínima del main es
+     el 100% de la pantalla menos los 200px del header */
+}
+
+.hero {
+  background: linear-gradient(75deg, #bf9bff 0%, #fff 100%);
+  padding: 2rem;
+  text-align: center;
+}
+
+.subtitle {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+
+/* =====================================================
+   ACERCA DE (ABOUT)
+   ===================================================== */
+
+.about {
+  padding: 2rem;
+}
+
+.about-container {
+  display: flex;      /* pone imagen y texto uno al lado del otro */
+  gap: 2rem;          /* espacio entre la imagen y el texto */
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.about-logo img {
+  width: 25vw;
+  border-radius: 20px;
+}
+
+.about-text {
+  flex: 1;
+  /* flex: 1 hace que el texto ocupe todo el espacio que sobre
+     después de la imagen */
+}
+
+.about-text h3 {
+  margin-top: 1.5rem;
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   TÉCNICAS
+   ===================================================== */
+
+.techniques {
+  padding: 2rem;
+}
+
+.technique-container {
+  display: flex;
+  gap: 2rem;
+  align-items: center; /* alinea verticalmente los 3 bloques al centro */
+}
+
+.technique-item {
+  flex: 1; /* cada columna de texto ocupa el mismo espacio */
+}
+
+.technique-item ul {
+  list-style-position: inside;
+  padding-left: 1rem;
+}
+
+.technique-item li {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.technique-video video {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  object-fit: cover;
+  /* object-fit: cover hace que el video llene el espacio
+     sin deformarse, recortando lo que sobra */
+}
+
+
+/* =====================================================
+   TRABAJOS / GALERÍA - ESTRUCTURADO
+   ===================================================== */
+
+.works {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #eebeff;
+  gap: 2rem;
+  align-items: center;
+}
+
+.works-cta {
+  text-align: center;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Contenedor de galerías con grid */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1000px;
+  justify-items: center;
+  align-items: center;
+}
+
+/* Cada imagen con su texto arriba */
+.image-wrapper {
+  position: relative;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.image-wrapper img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.image-wrapper img:hover {
+  transform: scale(1.05);
+}
+
+/* Texto ARRIBA de la imagen */
+.image-label {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  order: -1;  /* esto pone el texto antes de la imagen */
+}
+
+
+/* =====================================================
+   CONTACTO (FORMULARIO + MAPA)
+   ===================================================== */
+
+.contact {
+  display: flex;  /* pone el formulario y el mapa uno al lado del otro */
+  width: 100%;
+  min-height: 350px;
+}
+
+.contact-form-wrapper {
+  width: 50%;
+  background-color: #ae80ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;               /* espacio entre cada campo */
+}
+
+.contact-form input,
+.contact-form textarea {
+  /* Se pueden agrupar selectores con coma para no repetir código */
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 125px;
+}
+
+/* Botón de enviar con forma de píldora */
+.btn-submit {
+  padding: 12px 24px;
+  border-radius: 33px;
+  background-color: #8400ff;
+  color: #fff;
+  border: none;
+  cursor: pointer;    /* muestra la manito al pasar el mouse */
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Efecto de brillo neón en el botón */
+.btn-submit:hover {
+  box-shadow: 0 0 15px #c800ff, 0 0 30px #f200ff;
+  /* Dos sombras separadas por coma: brillo chico + halo grande */
+  transform: translateY(-3px); /* sube el botón 3px hacia arriba */
+}
+
+.contact-map {
+  width: 50%;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 2px;
+  border-color: #000;
+}
+
+
+/* =====================================================
+   FOOTER (PIE DE PÁGINA)
+   ===================================================== */
+
+.footer {
+  background: linear-gradient(135deg, #933eee 0%, #111 100%);
+  color: #fff;
+  padding: 2rem;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.footer-content {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h3 {
+  color: #fff;
+}
+
+.footer-logo {
+  max-width: 300px;
+  height: auto;   /* mantiene la proporción original de la imagen */
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #f7d7fe;
+  padding-left: 5px;  /* se desplaza un poquito a la derecha al hacer hover */
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  /* rgba() es como un color hex pero con transparencia:
+     rgba(rojo, verde, azul, opacidad) el 0.3 es 30% opaco */
+  padding-top: 1.5rem;
+}
+
+.float-wa {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #EEE;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  z-index: 100;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  text-decoration: none;  /* elimina el subrayado del link */
+}
+
+.float-wa:hover {
+  transform: scale(1.1);
+  background-color: #1ead53;
+}
+
+/* =====================================================
+   RESPONSIVE - TABLET
+   ===================================================== */
+
+@media (max-width: 1024px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-logo img {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .technique-container {
+    flex-direction: column;
+  }
+
+  .technique-video video {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+/* =====================================================
+   RESPONSIVE - CELULAR
+   ===================================================== */
+
+@media (max-width: 768px) {
+  /* HEADER */
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    min-height: auto;
+  }
+
+  .header-logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 10px;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .nav-menu a {
+    font-size: 0.9rem;
+  }
+
+  /* HERO */
+  .title-candy {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  /* ABOUT */
+  .about {
+    padding: 1rem;
+  }
+
+  .about-container {
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 5px;
+  }
+
+  .about-logo img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* TÉCNICAS */
+  .techniques {
+    padding: 1rem;
+  }
+
+  .technique-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .technique-item {
+    width: 100%;
+  }
+
+  .technique-item ul {
+    padding-left: 1rem;
+  }
+
+  .technique-video video {
+    width: 100%;
+    height: 200px;
+  }
+
+  /* WORKS / GALERÍA */
+  .works {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .works-cta {
+    font-size: 1rem;
+  }
+
+  .gallery-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    max-width: 100%;
+  }
+
+  .image-wrapper {
+    width: 150px;
+  }
+
+  .image-wrapper img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .image-label {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  /* CONTACTO */
+  .contact {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .contact-form-wrapper {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .contact-form {
+    max-width: 100%;
+  }
+
+  .contact-map {
+    width: 100%;
+    min-height: 250px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-content {
+    gap: 1.5rem;
+    flex-direction: column;
+  }
+
+  .footer-section {
+    min-width: 100%;
+  }
+
+  .footer-logo {
+    max-width: 200px;
+  }
+
+  .social-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .social-links a {
+    font-size: 0.9rem;
+  }
+
+  .float-wa {
+    width: 50px;
+    height: 50px;
+    bottom: 30px;
+    right: 30px;
+    font-size: 24px;
+  }
+}
+
+/* =====================================================
+   RESPONSIVE - MÓVIL PEQUEÑO
+   ===================================================== */
+
+@media (max-width: 480px) {
+  .header-logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .title-candy {
+    font-size: 1.2rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .works {
+    padding: 0.5rem;
+  }
+
+  .gallery-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .image-wrapper {
+    width: 120px;
+  }
+
+  .image-wrapper img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .image-label {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+
+  .float-wa {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+}
